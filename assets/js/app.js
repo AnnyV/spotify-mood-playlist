@@ -44,9 +44,25 @@ function getCategoryList() {
     });
 }
 
+/* Call the Web API category list endpoint */
+function getCategoryPlaylists() {
+
+    var url = 'https://api.spotify.com/v1/browse/categories/mood/playlists'; 
+
+    return $.ajax({
+        url: url,
+        headers: {
+           'Authorization': 'Bearer ' +  credentials.token
+        }
+    });
+}
+
+
+
 function go() {
 /* Call the Web API category list endpoint */
-    getCategoryList()
+    // getCategoryList()
+    getCategoryPlaylists()
          .then(function(response) {
                     console.log(response);
                 });
