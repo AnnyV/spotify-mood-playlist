@@ -69,6 +69,7 @@ function go() {
 
     getCategoryPlaylists()
          .then(function(response) {
+                console.log(response)
                 $("#playlists-well").empty()
                 for (var i = 0; i < response.playlists.items.length; i++) {
                     $("#playlists-well").append("<p>" + response.playlists.items[i].name + "</p>")
