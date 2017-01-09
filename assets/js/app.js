@@ -1,4 +1,37 @@
 
+"use strict";
+
+var maxPlaylists = 1000;
+var maxPlaylistsToDisplay = 1000;
+var credentials = null;
+var totalTracks = 0;
+var totalPlaylistCount = 0;
+var abortFetching = false;
+var popNormalize = false;
+var allPlaylists = [];
+var topTracks = null;
+var allTracks = {};
+
+
+function error(s) {
+    info(s);
+}
+
+function info(s) {
+    $("#info").text(s);
+}
+
+function callSpotify(url, data) {
+    return $.ajax(url, {
+        dataType: 'json',
+        data: data,
+        headers: {
+            'Authorization': 'Bearer ' + credentials.token
+        }
+    });
+}
+
+
 function initApp() {
     // $(".intro-form").hide();
     // $(".results").hide();
