@@ -1,9 +1,4 @@
 
-    $("#login-button").on('click', function() {
-        loginWithSpotify();
-    });
-
-
 function initApp() {
     // $(".intro-form").hide();
     // $(".results").hide();
@@ -14,18 +9,20 @@ function initApp() {
     //         }
     //     }
     // );
-    // $("#go").on('click', function() {
-    //     go();
-    // });
+
+
+    $("#go").on('click', function() {
+        go();
+    });
     // $(".stop-button").on('click', function() {
     //     abortFetching = true;
     // });
     // $("#fetch-tracks").on('click', function() {
     //     fetchAllTracksFromPlaylist();
     // });
-    // $("#login-button").on('click', function() {
-    //     loginWithSpotify();
-    // });
+    $("#login-button").on('click', function() {
+        loginWithSpotify();
+    });
     // $("#save-button").on('click', function() {
     //     savePlaylist();
     // });
@@ -37,8 +34,8 @@ function initApp() {
 
 
     function loginWithSpotify() {
-    var client_id = '575f5189c6a149dcbdc0d13d0c1e6ba0';
-    var redirect_uri = 'file:///C:/Users/vviscont/Google%20Drive/RCBprojects/spotify-mood-playlist/index.html';
+    var client_id = '0b30ba6a3ced43f5bc06c0902f79e47c';
+    var redirect_uri = 'https://spotify-mood-playlist.herokuapp.com/';
     // var scopes = 'playlist-modify-public';
     if (document.location.hostname == 'localhost') {
         redirect_uri = 'http://localhost:8000/index.html';
@@ -105,6 +102,24 @@ function performAuthDance() {
         }
     }
 }
+
+
+function go() {
+    $("#top").hide(200);
+    var text = $("#playlist-terms").val()
+    if (text.length > 0) {
+        info("");
+        $(".keywords").text(text);
+        $(".results").hide();
+        $("#playlist-table").show();
+        findMatchingPlaylists(text);
+    } else {
+        info("Enter some keywords first");
+    }
+}
+
+
+
 $(document).ready(
     function() {
         initApp();
