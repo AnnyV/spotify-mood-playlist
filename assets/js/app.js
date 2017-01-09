@@ -31,6 +31,30 @@ function callSpotify(url, data) {
     });
 }
 
+/* Call the Web API category list endpoint */
+function getCategoryList() {
+
+    var url = 'https://api.spotify.com/v1/browse/categories?limit=50'; 
+
+    return $.ajax({
+        url: url,
+        headers: {
+           'Authorization': 'Bearer ' +  credentials.token
+        }
+    });
+}
+
+function go() {
+/* Call the Web API category list endpoint */
+    getCategoryList()
+         .then(function(response) {
+                    console.log(response);
+                });
+}
+
+
+
+
 
 function initApp() {
     // $(".intro-form").hide();
@@ -133,21 +157,6 @@ function performAuthDance() {
     // otherwise, got to spotify to get auth
             $("#login-form").show();
         }
-    }
-}
-
-
-function go() {
-    $("#top").hide(200);
-    var text = $("#playlist-terms").val()
-    if (text.length > 0) {
-        info("");
-        $(".keywords").text(text);
-        $(".results").hide();
-        $("#playlist-table").show();
-        findMatchingPlaylists(text);
-    } else {
-        info("Enter some keywords first");
     }
 }
 
