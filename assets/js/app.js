@@ -47,7 +47,7 @@ function getCategoryList() {
 /* Call the Web API category list endpoint */
 function getCategoryPlaylists() {
 
-    var url = 'https://api.spotify.com/v1/browse/categories/mood/playlists'; 
+    var url = 'https://api.spotify.com/v1/browse/categories/mood/playlists?offset=0&limit=50'; 
 
     return $.ajax({
         url: url,
@@ -62,10 +62,18 @@ function getCategoryPlaylists() {
 function go() {
 /* Call the Web API category list endpoint */
     // getCategoryList()
+
+    $("#login").hide();
+    $("#get-playlists").hide();
+    $("#playlists").show();
+
     getCategoryPlaylists()
          .then(function(response) {
-                    console.log(response);
-                });
+                $("#playlists-well").empty()
+                for (var i = 0; i < response.playlists.items.length; i++) {
+                    $("#playlists-well").append("<p>" + response.playlists.items[i].name + "</p>")
+                }
+            });
 }
 
 
@@ -73,36 +81,19 @@ function go() {
 
 
 function initApp() {
-    // $(".intro-form").hide();
-    // $(".results").hide();
-    // $("#playlist-terms").keyup(
-    //     function(event) {
-    //         if (event.keyCode == 13) {
-    //             go();
-    //         }
-    //     }
-    // );
 
+    $("#login").show();
+    $("#get-playlists").hide();
+    $("#playlists").hide();
 
     $("#go").on('click', function() {
         go();
     });
-    // $(".stop-button").on('click', function() {
-    //     abortFetching = true;
-    // });
-    // $("#fetch-tracks").on('click', function() {
-    //     fetchAllTracksFromPlaylist();
-    // });
+
     $("#login-button").on('click', function() {
         loginWithSpotify();
     });
-    // $("#save-button").on('click', function() {
-    //     savePlaylist();
-    // });
-    // $("#norm-for-pop").on('click', function() {
-    //     popNormalize = $("#norm-for-pop").is(':checked');
-    //     refreshTrackList(allTracks);
-    // });
+
 }
 
 
@@ -134,7 +125,9 @@ function performAuthDance() {
     }
 
     if (credentials && credentials.expires > getTime()) {
-        $("#search-form").show();
+        $("#login").hide();
+        $("#get-playlists").show();
+        $("#playlists").hide();
     } else {
     // we have a token as a hash parameter in the url
     // so parse hash
@@ -171,7 +164,7 @@ function performAuthDance() {
             );
         } else {
     // otherwise, got to spotify to get auth
-            $("#login-form").show();
+            $("#login").show();
         }
     }
 }
