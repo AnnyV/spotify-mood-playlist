@@ -14,7 +14,7 @@ var allTracks = {};
 var playlistId = '0ApL3HCGSTLQhXIcQqIMVZ';
 
 var url = 'https://embed.spotify.com/?uri='
-var uri = 'spotify:user:spotify:playlist:'
+var uri = 'spotify:user:spotify_uk_:playlist:'
 
 // console.log(url);
 
