@@ -14,8 +14,11 @@
 </head>
 
 <body>
+<!-- <iframe src="http://open.spotify.com/track/2TpxZ7JUBn3uw46aR7qd6V">
+</iframe>
+ -->
 
-  <div class="container">
+   <div class="container">
     <br>
     <!-- Jumbotron -->
     <div class="jumbotron">
@@ -38,17 +41,24 @@
               <h2>Click the button below to retrieve a list of playlists included in the category "Mood"</h2>
               <button class="btn btn-primary btn-lg" id='go' type="button">Get Mood Playlists</button>
             </div>
-            <div id="playlists">
-              <h2>"Mood" Playlists:</h2>
-              <div id="playlists-well">
+            <div class="row">
+              <div class="col-lg-4">
+                <div id="playlists">
+                  <h2>"Mood" Playlists:</h2>
+                  <div id="playlists-well">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="myFrame">
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
-                    
+</div>                    
     <!-- Message Modal -->
   <div id="msgModal" class="modal fade" role="dialog">
     <div class="modal-dialog">

@@ -11,11 +11,12 @@ var popNormalize = false;
 var allPlaylists = [];
 var topTracks = null;
 var allTracks = {};
+var playlistsId = '0ApL3HCGSTLQhXIcQqIMVZ';
 
+var url = 'https://embed.spotify.com/?uri='
+var uri = 'spotify:user:spotify:playlist:'
 
-function error(s) {
-    info(s);
-}
+// console.log(url);
 
 function info(s) {
     $("#info").text(s);
@@ -45,9 +46,27 @@ function getCategoryList() {
 }
 
 /* Call the Web API category list endpoint */
+function displayPlaylist() {
+
+    var url = 'https://api.spotify.com/v1/users/spotify/playlists/';
+
+    var playlistId =  ($(this).data("playlistid"));
+console.log(($(this).data("playlistid")));
+
+    url = url + playlistId 
+
+    return $.ajax({
+        url: url,
+        headers: {
+           'Authorization': 'Bearer ' +  credentials.token
+        }
+
+    });
+}
+
 function getCategoryPlaylists() {
 
-    var url = 'https://api.spotify.com/v1/browse/categories/mood/playlists?offset=0&limit=50'; 
+    var url = 'https://api.spotify.com/v1/browse/categories/mood/playlists?offset=0&limit=1'; 
 
     return $.ajax({
         url: url,
@@ -56,8 +75,6 @@ function getCategoryPlaylists() {
         }
     });
 }
-
-
 
 function go() {
 /* Call the Web API category list endpoint */
@@ -72,9 +89,27 @@ function go() {
                 console.log(response)
                 $("#playlists-well").empty()
                 for (var i = 0; i < response.playlists.items.length; i++) {
-                    $("#playlists-well").append("<p>" + response.playlists.items[i].name + "</p>")
+                     var playlistId = response.playlists.items[i].id
+                     var $p = $("<p>").addClass("playlist");
+                     $p.text(response.playlists.items[i].name).attr("data-playlistid", playlistId);
+                        
+   
+                    $("#playlists-well").append($p);
                 }
             });
+
+    //  src="https://embed.spotify.com/?uri=spotify:user:spotify_uk_:playlist:0ApL3HCGSTLQhXIcQqIMVZ" 
+    // width="300" height="380" frameborder="0" allowtransparency="true"
+    $('<iframe>', {
+       src: url + uri + playlistId,
+       frameborder: 0,
+       width: 300,
+       height: 380,
+       allowtransparency: true
+       }).appendTo('.myFrame');
+    function error(s) {
+        info(s);
+    }
 }
 
 
@@ -93,8 +128,11 @@ function initApp() {
 
     $("#login-button").on('click', function() {
         loginWithSpotify();
-    });
+        });
 
+    $(document).on('click', ".playlist", function() {
+        displayPlaylist();
+    });
 }
 
 
