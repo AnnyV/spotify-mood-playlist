@@ -50,7 +50,7 @@ function displayPlaylist() {
     var url = 'https://api.spotify.com/v1/users/spotify/playlists/';
 
     var playlistId =  ($(this).data("playlistid"));
-// console.log(($(this).data("playlistid")));
+console.log(($(this).data("playlistid")));
 
     url = url + playlistId 
 
@@ -85,7 +85,7 @@ function go() {
 
     getCategoryPlaylists()
          .then(function(response) {
-                // console.log(response)
+                console.log(response)
                 $("#playlists-well").empty()
                 for (var i = 0; i < response.playlists.items.length; i++) {
                      var playlistId = response.playlists.items[i].id
