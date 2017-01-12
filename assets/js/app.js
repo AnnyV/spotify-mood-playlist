@@ -11,7 +11,7 @@ var popNormalize = false;
 var allPlaylists = [];
 var topTracks = null;
 var allTracks = {};
-var playlistsId = '0ApL3HCGSTLQhXIcQqIMVZ';
+var playlistId = '0ApL3HCGSTLQhXIcQqIMVZ';
 
 var url = 'https://embed.spotify.com/?uri='
 var uri = 'spotify:user:spotify:playlist:'
