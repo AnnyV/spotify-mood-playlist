@@ -14,7 +14,6 @@ var allTracks = {};
 var playlistId = '3rgsDhGHZxZ9sB9DQWQfuf';
 
 var url = 'https://embed.spotify.com/?uri='
-var uri = 'spotify:user:spotify:playlist:'
 
 // console.log(url);
 
@@ -91,25 +90,13 @@ function go() {
                 for (var i = 0; i < response.playlists.items.length; i++) {
                      var playlistId = response.playlists.items[i].id
                      var $p = $("<p>").addClass("playlist");
-                     $p.text(response.playlists.items[i].name).attr("data-playlistid", playlistId);
+                     $p.text(response.playlists.items[i].name).attr("data-uri", response.playlists.items[i].uri);
                         
    
                     $("#playlists-well").append($p);
                 }
             });
 
-    //  src="https://embed.spotify.com/?uri=spotify:user:spotify_uk_:playlist:0ApL3HCGSTLQhXIcQqIMVZ" 
-    // width="300" height="380" frameborder="0" allowtransparency="true"
-    $('<iframe>', {
-       src: url + uri + playlistId,
-       frameborder: 0,
-       width: 300,
-       height: 380,
-       allowtransparency: true
-       }).appendTo('.myFrame');
-    function error(s) {
-        info(s);
-    }
 }
 
 
@@ -214,6 +201,24 @@ $(document).ready(
     function() {
         initApp();
         performAuthDance();
-    }
+
+    $(document).on("click", ".playlist", function() {
+
+        var uriPlaylist = $(this).data(uri);
+
+        $(".myFrame").empty();
+
+        $('<iframe>', {
+           src: url + uri,
+           frameborder: 0,
+           width: 300,
+           height: 380,
+           allowtransparency: true
+           }).appendTo('.myFrame');
+        function error(s) {
+            info(s);
+        }
+
+        }
 );
 
