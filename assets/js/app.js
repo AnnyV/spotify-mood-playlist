@@ -201,7 +201,7 @@ $(document).ready(
     function() {
         initApp();
         performAuthDance();
-        }
+        });
 
     $(document).on("click", ".playlist", function() {
 
@@ -221,6 +221,3 @@ $(document).ready(
         }
 
     });
-
-);
-
