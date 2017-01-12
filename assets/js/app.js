@@ -210,7 +210,7 @@ $(document).ready(
         $(".myFrame").empty();
 
         $('<iframe>', {
-           src: url + uri,
+           src: url + uriPlaylist,
            frameborder: 0,
            width: 300,
            height: 380,
