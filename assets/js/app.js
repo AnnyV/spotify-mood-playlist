@@ -11,10 +11,10 @@ var popNormalize = false;
 var allPlaylists = [];
 var topTracks = null;
 var allTracks = {};
-var playlistId = '0ApL3HCGSTLQhXIcQqIMVZ';
+var playlistId = '3rgsDhGHZxZ9sB9DQWQfuf';
 
 var url = 'https://embed.spotify.com/?uri='
-var uri = 'spotify:user:spotify_uk_:playlist:'
+var uri = 'spotify:user:spotify:playlist:'
 
 // console.log(url);
 
@@ -66,7 +66,7 @@ console.log(($(this).data("playlistid")));
 
 function getCategoryPlaylists() {
 
-    var url = 'https://api.spotify.com/v1/browse/categories/mood/playlists?offset=0&limit=1'; 
+    var url = 'https://api.spotify.com/v1/browse/categories/mood/playlists?offset=0&limit=50'; 
 
     return $.ajax({
         url: url,
