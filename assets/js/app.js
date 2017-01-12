@@ -205,7 +205,7 @@ $(document).ready(
 
     $(document).on("click", ".playlist", function() {
 
-        var uriPlaylist = $(this).data(uri);
+        var uriPlaylist = $(this).data('uri');
 
         $(".myFrame").empty();
 
