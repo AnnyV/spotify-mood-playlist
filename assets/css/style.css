@@ -35,10 +35,13 @@ h4 {
 }
 
 body {
+	background-image: url("../images/music016.gif") /*class= "img-responsive center-block" */
+    /*alt="Music Therapist">*/
 
-background: #004FF9; /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, ##8e9eab , #FFF94C); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #004FF9 , #FFF94C);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+/*background: #004FF9;*/ /* fallback for old browsers */
+/*background: -webkit-linear-gradient(to right, ##8e9eab , #FFF94C);*/ /* Chrome 10-25, Safari 5.1-6 */
+/*background: linear-gradient(to right, #004FF9 , #FFF94C);*//* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 /*to right.....replace 90deg*/        
 }
 
@@ -53,7 +56,7 @@ background: linear-gradient(to right, #004FF9 , #FFF94C);/* W3C, IE 10+/ Edge, F
 }
 
  .panel-body {
- 	background-image: url('MusicTherapy.png'); 
+ 	background-image: url('.MusicTherapy.png'); 
  }
 
 .playlist{
