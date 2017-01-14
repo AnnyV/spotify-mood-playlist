@@ -2,43 +2,95 @@
 <html lang="en">
 
 <head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Spotify Mood Playlists</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-</head>
+  <!-- Add Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Josefin+Sans" rel="stylesheet">
 
+    <title>Musing</title>
+</head>
 <body>
-<!-- <iframe src="http://open.spotify.com/track/2TpxZ7JUBn3uw46aR7qd6V">
-</iframe>
- -->
+
 
    <div class="container">
     <br>
     <!-- Jumbotron -->
-    <div class="jumbotron">
-      <h1 class="text-center">Spotify Mood Playlists</h1>
-
+     <div class="jumbotron" style="background-color:#01579B">
+      <!-- centered text -->
+      <h1 class="text-center"><strong>Musing</strong></h1> 
+      <h2 class="text-center">Your Musical Therapist</h2>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12">
+    <!-- User fills out form, entering emotions -->
+    <!-- Clicking "Explore" causes articles, audio and visual content to pop up to give user info about current mood: psycho analytical-->
+    <!-- Clicking "Muse" sends user to Spotify playlist.-->
+
+
+    <span id="container">
+<form>
+  <!-- <div class="form-group"> -->
+  <div class="col-lg-6">
+    <h4><strong>I Feel</strong></h4>
+    <input type="text" class="form-control" id="iFeel" placeholder="sad">
+     <span class="input-group-btn">
+        <button class="btn btn-default" id="nowfeels" type="button" >
+    <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+         Explore
+        </button>
+      </span>
+   </div>
+
+</form>
+
+<!-- <div class="form-group"> -->
+  <div class="col-lg-6" id="list">
+    <h4><strong>Mental Health Resources</strong></h4>
+    <select name=""  class="select2">
+      <option value="zero" class="start">  Young Adult Mental Health </option>
+      <option value="one"><a href="http://www.google.com"> Depression </a></option>
+      <option value="two">  Anxiety Disorders  </option>
+      <option value="three">  Panic Disorder </option>
+      <option value="four">  Postpartum Depression  </option>
+      <option value="five">  Social Anxiety Phobia  </option>
+      <option value="six">  Bulimia Nervosa</option>
+      <option value="seven">  Acute Stress Disorder </option>
+      <option value="eight">  Antisocial Personality Disorder </option>
+      <option value="nine ">  Borderline Personality Disorder  </option>
+      <option value="ten"> Paranoid Personality Disorder </option>
+    </select>
+  </div>
+</div>
+<br>
+
+<!-- YouTube Iframe -->
+<span class="col-lg-6">
+  <div id="ytplayer"></div>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLkgTnxvnVPOLhqJQ0-7ZDpzPIxqCvzq7t" frameborder="0" allowfullscreen></iframe>
+</span>
+    <!-- <div class="row"> -->
+      <div class="col-lg-6" align="center">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title"><span class="fa fa-spotify" style="font-size:24px"></span> Spotify</h3>
           </div>
-          <div class="panel-body">
+          <div class="panel-body" style="background-color:#FFFF8D;">
             <div id="login">
-              <h2>Login to spotify by clicking the button below</h2>
-              <button class="btn btn-success btn-lg" id="login-button" type="button">Login to Spotify!</button>
+              <h4 style="text-align: center" >My Musical Mood</h4>
+              <button class="btn btn-default" id="login-button" type="button">
+              <span class="glyphicon glyphicon-music" aria-hidden="true"></span></a> Muse</button>
             </div>
             <div id="get-playlists">
-              <h2>Click the button below to retrieve a list of playlists included in the category "Mood"</h2>
+              <h2>My Mood List</h2>
               <button class="btn btn-primary btn-lg" id='go' type="button">Get Mood Playlists</button>
             </div>
             <div class="row">
@@ -83,6 +135,28 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <!-- Automated list options generator -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+ 
+ <script>
+  
+   $(document).ready(function() {
+     $(".select2").select2();
+
+//      $("#list")
+//     .on("change", function(e) { 
+
+//   //value here
+//       e.window.open("www.google.com"); 
+
+// });
+
+   });
+
+ </script>
+
 </body>
 
 </html>

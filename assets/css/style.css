@@ -20,3 +20,38 @@ html, body {
 .nav-tabs>li {
     margin-left: -5px;
 }
+
+h1 {
+	font-size: 300%; 
+}
+
+h2 {
+	font-size: 200%; 
+}
+
+h4 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 150%; 
+}
+
+body {
+
+background: #004FF9; /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, ##8e9eab , #FFF94C); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #004FF9 , #FFF94C);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*to right.....replace 90deg*/        
+}
+
+.jumbotron {
+
+	font-family: 'Cherry Swash', cursive;
+ }      
+
+/*Change color of panel heading tab*/
+.panel-heading {
+	background-color: #F57F17; 
+}
+
+ .panel-body {
+ 	background-image: url('MusicTherapy.png'); 
+ }
