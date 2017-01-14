@@ -35,7 +35,7 @@ h4 {
 }
 
 body {
-	background-image: url("../images/music016.gif") /*class= "img-responsive center-block" */
+	background-image: url("../images/music024.gif") /*class= "img-responsive center-block" */
     /*alt="Music Therapist">*/
 
 
@@ -44,11 +44,11 @@ body {
 /*background: linear-gradient(to right, #004FF9 , #FFF94C);*//* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 /*to right.....replace 90deg*/        
 }
-
+/*
 .jumbotron {
 
 	font-family: 'Cherry Swash', cursive;
- }      
+ }     */ 
 
 /*Change color of panel heading tab*/
 .panel-heading {
@@ -56,10 +56,13 @@ body {
 }
 
  .panel-body {
- 	background-image: url('.MusicTherapy.png'); 
+ 
  }
 
 .playlist{
 	color:blue;
 	cursor: pointer;
+}
+element.style {
+    background-color: #d2c4a7;
 }
