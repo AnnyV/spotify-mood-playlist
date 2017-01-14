@@ -55,3 +55,7 @@ background: linear-gradient(to right, #004FF9 , #FFF94C);/* W3C, IE 10+/ Edge, F
  .panel-body {
  	background-image: url('MusicTherapy.png'); 
  }
+
+.playlist{
+	color:blue;
+}

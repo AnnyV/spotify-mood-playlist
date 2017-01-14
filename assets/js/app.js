@@ -17,9 +17,9 @@ var url = 'https://embed.spotify.com/?uri='
 
 // console.log(url);
 
-function info(s) {
-    $("#info").text(s);
-}
+// function info(s) {
+//     $("#info").text(s);
+// }
 
 function callSpotify(url, data) {
     return $.ajax(url, {
